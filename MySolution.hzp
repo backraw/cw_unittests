@@ -1,0 +1,492 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="MySolution" target="8" version="2">
+  <project Name="MyProject">
+    <configuration
+      Name="Common"
+      c_user_include_directories=""
+      macros="$(P1VALUE)"
+      project_dependencies="libCppUnit;libSTM32F746;libStartupBare;libUSB"
+      project_directory="."
+      project_type="Executable" />
+    <folder Name="Source Files">
+      <file file_name="main.cpp" />
+      <file file_name="test_example.h" />
+      <file file_name="test_example.cpp" />
+      <file file_name="include/compiler.h" />
+    </folder>
+  </project>
+  <project Name="libUSB">
+    <configuration
+      Name="Common"
+      project_directory="STM32CubeMX/STM32_USB_Device_Library"
+      project_type="Library" />
+    <folder Name="Communication Device Class (CDC)">
+      <folder Name="include">
+        <file file_name="Class/CDC/Inc/usbd_cdc.h" />
+      </folder>
+      <file file_name="Class/CDC/Src/usbd_cdc.c" />
+    </folder>
+    <folder Name="Core">
+      <folder Name="include">
+        <file file_name="Core/Inc/usbd_core.h" />
+        <file file_name="Core/Inc/usbd_ctlreq.h" />
+        <file file_name="Core/Inc/usbd_def.h" />
+        <file file_name="Core/Inc/usbd_ioreq.h" />
+      </folder>
+      <file file_name="Core/Src/usbd_core.c" />
+      <file file_name="Core/Src/usbd_ctlreq.c" />
+      <file file_name="Core/Src/usbd_ioreq.c" />
+    </folder>
+  </project>
+  <project Name="libStartupBare">
+    <configuration
+      Name="Common"
+      project_directory="STM32F746"
+      project_type="Object file" />
+    <folder Name="System Startup">
+      <configuration Name="Common" filter="c;h;s;asm;inc" />
+      <folder Name="Early Startup (Assembler)">
+        <file file_name="STM32_Startup.s" />
+        <file file_name="STM32F746xx.vec" />
+        <file file_name="thumb_crt0.s" />
+      </folder>
+      <folder Name="include">
+        <file file_name="$(SolutionDir)/STM32CubeMX/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h" />
+        <file file_name="$(SolutionDir)/vendorsrc/STM32CubeMX/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h" />
+        <file file_name="$(SolutionDir)//STM32CubeMX/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h" />
+      </folder>
+      <folder Name="Startup (C)">
+        <file file_name="$(SolutionDir)/STM32CubeMX/CMSIS/Device/ST/STM32F7xx/Source/Templates/system_stm32f7xx.c" />
+      </folder>
+    </folder>
+  </project>
+  <project Name="libSTM32F746">
+    <configuration
+      Name="Common"
+      project_directory="STM32F746"
+      project_type="Object file" />
+    <folder Name="System Setup">
+      <configuration Name="Common" filter="c;h;s" />
+      <file file_name="putchar.c" />
+      <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/stm32_hal.c" />
+    </folder>
+    <folder Name="MPU Fault Handler">
+      <configuration Name="Common" filter="c;h;s" />
+      <file file_name="mpu_fault.S" />
+    </folder>
+    <folder Name="CubeMX">
+      <folder Name="Src">
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/adc.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/crc.c">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/dac.c">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/gpio.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/i2c.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/iwdg.c">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/lptim.c">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/rng.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/rtc.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/sdmmc.c">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/spi.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/stm32f7xx_hal_msp.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/stm32f7xx_it.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/tim.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/usart.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/usbd_cdc_if.c">
+          <configuration Name="Common" />
+        </file>
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/usbd_conf.c">
+          <configuration Name="Common" />
+        </file>
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/usbd_desc.c" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/usb_device.c">
+          <configuration Name="Common" />
+        </file>
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Src/wwdg.c">
+          <configuration Name="Release" build_exclude_from_build="Yes" />
+          <configuration Name="Debug" build_exclude_from_build="Yes" />
+        </file>
+      </folder>
+      <folder Name="Hdr">
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/adc.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/crc.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/dac.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/gpio.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/i2c.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/iwdg.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/lptim.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/main.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/rng.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/rtc.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/sdmmc.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/spi.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/stm32f7xx_hal_conf.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/stm32f7xx_it.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/tim.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/usart.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/usbd_cdc_if.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/usbd_conf.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/usbd_desc.h" />
+        <file file_name="$(SolutionDir)/STM32CubeMX/nucleo/Inc/usb_device.h" />
+      </folder>
+      <folder Name="HAL">
+        <folder Name="Src">
+          <configuration Name="Common" filter="c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_adc_ex.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_crc_ex.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dac.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dac_ex.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_iwdg.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_lptim.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pcd_ex.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rng.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc_ex.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sd.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_spi.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_wwdg.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c">
+            <configuration Name="Release" build_exclude_from_build="Yes" />
+            <configuration Name="Debug" build_exclude_from_build="Yes" />
+          </file>
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_usb.c" />
+        </folder>
+        <folder Name="Hdr">
+          <configuration Name="Common" filter="h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dac.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dac_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_gpio_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_iwdg.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_lptim.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rng.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rtc.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rtc_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_wwdg.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h" />
+          <file file_name="$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h" />
+        </folder>
+      </folder>
+    </folder>
+  </project>
+  <project Name="libCppUnit">
+    <configuration
+      Name="Common"
+      build_always_rebuild="No"
+      c_additional_options="-fexceptions"
+      cpp_enable_exceptions="Yes"
+      cpp_enable_rtti="Yes"
+      project_dependencies="TestRunner"
+      project_directory="cppunit"
+      project_type="Library" />
+    <folder Name="CppUnit Library">
+      <configuration Name="Common" filter="c;cpp;h;s;asm;inc" />
+      <file file_name="src/cppunit/Test.cpp" />
+      <file file_name="src/cppunit/TestFactoryRegistry.cpp" />
+      <file file_name="src/cppunit/TestSuiteBuilderContext.cpp" />
+      <file file_name="src/cppunit/TestCase.cpp" />
+      <file file_name="src/cppunit/TestNamer.cpp" />
+      <file file_name="src/cppunit/AdditionalMessage.cpp" />
+      <file file_name="src/cppunit/Asserter.cpp" />
+      <file file_name="src/cppunit/BriefTestProgressListener.cpp" />
+      <file file_name="src/cppunit/CompilerOutputter.cpp" />
+      <file file_name="src/cppunit/DefaultProtector.cpp" />
+      <file file_name="src/cppunit/DynamicLibraryManager.cpp" />
+      <file file_name="src/cppunit/DynamicLibraryManagerException.cpp" />
+      <file file_name="src/cppunit/Exception.cpp" />
+      <file file_name="src/cppunit/PlugInManager.cpp" />
+      <file file_name="src/cppunit/PlugInParameters.cpp" />
+      <file file_name="src/cppunit/RepeatedTest.cpp" />
+      <file file_name="src/cppunit/SourceLine.cpp" />
+      <file file_name="src/cppunit/StringTools.cpp" />
+      <file file_name="src/cppunit/SynchronizedObject.cpp" />
+      <file file_name="src/cppunit/TestAssert.cpp" />
+      <file file_name="src/cppunit/TestCaseDecorator.cpp" />
+      <file file_name="src/cppunit/TestComposite.cpp" />
+      <file file_name="src/cppunit/TestDecorator.cpp" />
+      <file file_name="src/cppunit/TestFailure.cpp" />
+      <file file_name="src/cppunit/TestLeaf.cpp" />
+      <file file_name="src/cppunit/TestPath.cpp" />
+      <file file_name="src/cppunit/TestPlugInDefaultImpl.cpp" />
+      <file file_name="src/cppunit/TestResultCollector.cpp" />
+      <file file_name="src/cppunit/TestResult.cpp" />
+      <file file_name="src/cppunit/TestRunner.cpp" />
+      <file file_name="src/cppunit/TestSetUp.cpp" />
+      <file file_name="src/cppunit/TestSuccessListener.cpp" />
+      <file file_name="src/cppunit/TestSuite.cpp" />
+      <file file_name="src/cppunit/TextOutputter.cpp" />
+      <file file_name="src/cppunit/TextTestProgressListener.cpp" />
+      <file file_name="src/cppunit/TextTestResult.cpp" />
+      <file file_name="src/cppunit/TextTestRunner.cpp" />
+      <file file_name="src/cppunit/TypeInfoHelper.cpp" />
+      <file file_name="src/cppunit/XmlDocument.cpp" />
+      <file file_name="src/cppunit/XmlElement.cpp" />
+      <file file_name="src/cppunit/XmlOutputter.cpp" />
+      <file file_name="src/cppunit/XmlOutputterHook.cpp" />
+      <file file_name="src/cppunit/ProtectorChain.cpp" />
+      <file file_name="src/cppunit/Protector.cpp" />
+      <file file_name="src/cppunit/Message.cpp" />
+      <folder Name="Includes">
+        <file file_name="include/cppunit/AdditionalMessage.h" />
+        <file file_name="include/cppunit/Asserter.h" />
+        <file file_name="include/cppunit/BriefTestProgressListener.h" />
+        <file file_name="include/cppunit/CompilerOutputter.h" />
+        <file file_name="include/cppunit/Exception.h" />
+        <file file_name="include/cppunit/Message.h" />
+        <file file_name="include/cppunit/Outputter.h" />
+        <file file_name="include/cppunit/Portability.h" />
+        <file file_name="include/cppunit/Protector.h" />
+        <file file_name="include/cppunit/SourceLine.h" />
+        <file file_name="include/cppunit/SynchronizedObject.h" />
+        <file file_name="include/cppunit/TestAssert.h" />
+        <file file_name="include/cppunit/TestCaller.h" />
+        <file file_name="include/cppunit/TestCase.h" />
+        <file file_name="include/cppunit/TestComposite.h" />
+        <file file_name="include/cppunit/TestFailure.h" />
+        <file file_name="include/cppunit/TestFixture.h" />
+        <file file_name="include/cppunit/Test.h" />
+        <file file_name="include/cppunit/TestLeaf.h" />
+        <file file_name="include/cppunit/TestListener.h" />
+        <file file_name="include/cppunit/TestPath.h" />
+        <file file_name="include/cppunit/TestResultCollector.h" />
+        <file file_name="include/cppunit/TestResult.h" />
+        <file file_name="include/cppunit/TestRunner.h" />
+        <file file_name="include/cppunit/TestSuccessListener.h" />
+        <file file_name="include/cppunit/TestSuite.h" />
+        <file file_name="include/cppunit/TextOutputter.h" />
+        <file file_name="include/cppunit/TextTestProgressListener.h" />
+        <file file_name="include/cppunit/TextTestResult.h" />
+        <file file_name="include/cppunit/TextTestRunner.h" />
+        <file file_name="include/cppunit/XmlOutputter.h" />
+        <file file_name="include/cppunit/XmlOutputterHook.h" />
+        <folder Name="config">
+          <file file_name="include/cppunit/config-auto.h" />
+          <file file_name="include/cppunit/config/config-evc4.h" />
+          <file file_name="include/cppunit/config/config-mac.h" />
+          <file file_name="include/cppunit/config/config-msvc6.h" />
+          <file file_name="include/cppunit/config/CppUnitApi.h" />
+          <file file_name="include/cppunit/config/SelectDllLoader.h" />
+          <file file_name="include/cppunit/config/SourcePrefix.h" />
+        </folder>
+        <folder Name="extensions">
+          <file file_name="include/cppunit/extensions/AutoRegisterSuite.h" />
+          <file file_name="include/cppunit/extensions/ExceptionTestCaseDecorator.h" />
+          <file file_name="include/cppunit/extensions/HelperMacros.h" />
+          <file file_name="include/cppunit/extensions/Orthodox.h" />
+          <file file_name="include/cppunit/extensions/RepeatedTest.h" />
+          <file file_name="include/cppunit/extensions/TestCaseDecorator.h" />
+          <file file_name="include/cppunit/extensions/TestDecorator.h" />
+          <file file_name="include/cppunit/extensions/TestFactory.h" />
+          <file file_name="include/cppunit/extensions/TestFactoryRegistry.h" />
+          <file file_name="include/cppunit/extensions/TestFixtureFactory.h" />
+          <file file_name="include/cppunit/extensions/TestNamer.h" />
+          <file file_name="include/cppunit/extensions/TestSetUp.h" />
+          <file file_name="include/cppunit/extensions/TestSuiteBuilderContext.h" />
+          <file file_name="include/cppunit/extensions/TestSuiteFactory.h" />
+          <file file_name="include/cppunit/extensions/TypeInfoHelper.h" />
+          <file file_name="include/cppunit/extensions/XmlInputHelper.h" />
+        </folder>
+        <folder Name="plugin">
+          <file file_name="include/cppunit/plugin/DynamicLibraryManagerException.h" />
+          <file file_name="include/cppunit/plugin/DynamicLibraryManager.h" />
+          <file file_name="include/cppunit/plugin/PlugInManager.h" />
+          <file file_name="include/cppunit/plugin/PlugInParameters.h" />
+          <file file_name="include/cppunit/plugin/TestPlugInDefaultImpl.h" />
+          <file file_name="include/cppunit/plugin/TestPlugIn.h" />
+        </folder>
+        <folder Name="portability">
+          <file file_name="include/cppunit/portability/CppUnitDeque.h" />
+          <file file_name="include/cppunit/portability/CppUnitMap.h" />
+          <file file_name="include/cppunit/portability/CppUnitSet.h" />
+          <file file_name="include/cppunit/portability/CppUnitStack.h" />
+          <file file_name="include/cppunit/portability/CppUnitVector.h" />
+          <file file_name="include/cppunit/portability/FloatingPoint.h" />
+          <file file_name="include/cppunit/portability/Stream.h" />
+        </folder>
+        <folder Name="tools">
+          <file file_name="include/cppunit/tools/Algorithm.h" />
+          <file file_name="include/cppunit/tools/StringTools.h" />
+          <file file_name="include/cppunit/tools/XmlDocument.h" />
+          <file file_name="include/cppunit/tools/XmlElement.h" />
+        </folder>
+      </folder>
+    </folder>
+  </project>
+  <configuration
+    Name="MyProject Debug"
+    inherited_configurations="MyProject;Debug" />
+  <configuration
+    Name="MyProject"
+    Platform="ARM"
+    Target="STM32F746NG"
+    arm_instruction_set="Thumb"
+    arm_interwork="Default"
+    arm_library_instruction_set="Thumb"
+    arm_simulator_memory_simulation_parameter="STM32F746NG;0x100000;0x50000"
+    c_preprocessor_definitions="__THUMB"
+    debug_register_definition_file="$(SolutionDir)/STM32/STM32F7x_Peripherals.xml"
+    hidden="Yes"
+    linker_memory_map_file="$(SolutionDir)/STM32/STM32F746NG_MemoryMap.xml"
+    macros="BUILD=myproject" />
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None"
+    hidden="Yes" />
+  <configuration
+    Name="MyProject Release"
+    inherited_configurations="MyProject;Release" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG;STARTUP_FROM_RESET"
+    gcc_debugging_level="Level 1"
+    gcc_optimization_level="Level 1"
+    hidden="Yes" />
+  <configuration
+    Name="Flash"
+    arm_target_flash_loader_file_path="$(SolutionDir)/STM32/Release/STM32F2xx_Loader_rpc.elf)"
+    arm_target_loader_can_erase_all="Yes"
+    arm_target_loader_can_lock_all="No"
+    arm_target_loader_can_lock_range="No"
+    arm_target_loader_can_unlock_all="No"
+    arm_target_loader_can_unlock_range="No"
+    target_reset_script="FLASHReset()" />
+  <configuration Name="RAM" target_reset_script="Reset()" />
+  <configuration
+    Family="STM32F7"
+    Name="Common"
+    arm_architecture="v7EM"
+    arm_core_type="Cortex-M7"
+    arm_fp_abi="Hard"
+    arm_fpu_type="FPv5-SP-D16"
+    arm_gcc_target="arm-unknown-eabi"
+    arm_linker_heap_size="100000"
+    arm_linker_jtag_pad_pre_dr="1"
+    arm_linker_jtag_pad_pre_ir="5"
+    arm_linker_process_stack_size="20000"
+    arm_linker_stack_size="170000"
+    arm_simulator_memory_simulation_filename="$(SolutionDir)/STM32/STM32SimulatorMemory$(HostDLL)"
+    arm_supply_absolute_file_path="No"
+    arm_target_connect_with_reset="No"
+    arm_target_debug_interface_type="ADIv5"
+    arm_target_interface_type="Default"
+    arm_target_loader_applicable_loaders="Flash"
+    arm_target_loader_default_loader="Flash"
+    arm_target_restrict_memory_accesses="Yes"
+    c_preprocessor_definitions="STM32F746xx;CPPUNIT_HAVE_GCC_ABI_DEMANGLE=0;CPPUNIT_USE_TYPEINFO_NAME=0;CPPUNIT_NO_STREAM=1;FULL_LIBRARY"
+    c_user_include_directories="$(SolutionDir)/include;$(SolutionDir)/cppunit/include;$(SolutionDir)/STM32F746;$(SolutionDir)/STM32CubeMX/CMSIS/Device/ST/STM32F7xx/Include;$(SolutionDir)/STM32CubeMX/CMSIS/Include;$(SolutionDir)/STM32CubeMX/STM32F7xx_HAL_Driver/Inc;$(SolutionDir)/STM32CubeMX/nucleo/Inc;$(SolutionDir)/STM32CubeMX/STM32_USB_Device_Library/Class/CDC/Inc;$(SolutionDir)/STM32CubeMX/STM32_USB_Device_Library/Core/Inc;$(StudioDir)/include/stlport"
+    cpp_enable_exceptions="Yes"
+    cpp_enable_rtti="Yes"
+    cpp_only_additional_options="-fno-use-cxa-atexit"
+    file_codec="UTF-8"
+    gcc_c_language_standard="c99"
+    gcc_cplusplus_language_standard="c++98"
+    gcc_enable_all_warnings="Yes"
+    linker_printf_fp_enabled="Yes"
+    linker_section_placement_file="$(SolutionDir)/STM32F746/flash_placement.xml"
+    property_groups_file_path="$(SolutionDir)/STM32/propertyGroups.xml"
+    target_get_partname_script="GetPartName()"
+    target_match_partname_script="MatchPartName(&quot;$(Target)&quot;)"
+    target_script_file="$(SolutionDir)/STM32/STM32_Target.js"
+    target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+</solution>

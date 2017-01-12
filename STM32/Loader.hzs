@@ -1,0 +1,49 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow addressText="" bufferWidth="-1" bufferHeight="-1" addressSpace="" />
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="Loader" name="unnamed" />
+  <ProjectSessionItem path="Loader;STM32F0 Loader" name="unnamed" />
+  <ProjectSessionItem path="Loader;STM32 Loader" name="unnamed" />
+  <ProjectSessionItem path="Loader;STM32 Loader;Source Files" name="unnamed" />
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <TargetWindow programAction="" uploadFileType="" programLoadAddress="" programSize="" uploadFileName="" uploadMemoryInterface="" programFileName="" uploadStartAddress="" programFileType="" uploadSize="" programMemoryInterface="" />
+ <TraceWindow>
+  <Trace enabled="Yes" />
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never" />
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never" />
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never" />
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never" />
+ </Watch4>
+ <Files>
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="Loader_Startup.s" y="60" path="Loader_Startup.s" left="0" selected="0" name="unnamed" top="50" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="STM32_Loader.c" y="333" path="STM32_Loader.c" left="0" selected="0" name="unnamed" top="314" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="STM32_Target.js" y="0" path="STM32_Target.js" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="Loader_MemoryMap.xml" y="0" path="Loader_MemoryMap.xml" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="/usr/share/crossworks_for_arm_3.6/include/libmem_loader.h" y="42" path="/usr/share/crossworks_for_arm_3.6/include/libmem_loader.h" left="0" selected="0" name="unnamed" top="31" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="Release/Loader_rpc.ld" y="0" path="Release/Loader_rpc.ld" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="Release/Loader_rpc.map" y="14" path="Release/Loader_rpc.map" left="0" selected="1" name="unnamed" top="11" />
+ </Files>
+ <ARMCrossStudioWindow activeProject="STM32F0 Loader" autoConnectTarget="SEGGER J-Link" debugSearchFileMap="" fileDialogInitialDirectory="/home/abiessmann/Documents/CrossWorks Projects/Executable_1" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectCapabilities="1663" debugSearchPath="" buildConfiguration="Common" />
+</session>
